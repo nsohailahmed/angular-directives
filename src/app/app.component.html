@@ -4,12 +4,19 @@
         <li class="page-item" [ngClass]="{disabled: currentPage === 0}">
             <button (click)="currentPage=currentPage-1" class="page-link">Prev</button>
         </li>
-        <li class="page-item" [ngClass]="{active : currentPage===i}" *ngFor="let image of images; let i=index">
-            <button (click)="currentPage = i" class="page-link">{{i+1}}</button>
-        </li>
+        <ng-container *ngFor="let image of images; let i=index" >
+            <li class="page-item" [ngClass]="{active : currentPage===i}" *ngIf="checkWindowIndex(i)">
+                <button (click)="currentPage = i" class="page-link">{{i+1}}</button>
+            </li>
+        </ng-container>
+        
         <li class="page-item" [ngClass]="{disabled: currentPage === images.length-1}">
             <button (click)="currentPage=currentPage+1" class="page-link">Next</button>
         </li>
     </ul>
   </nav>
+  <div class="">
+    <h4> {{images[currentPage].title}} </h4>
+    <img [src]="images[currentPage].url" />
+  </div>
 </div>
