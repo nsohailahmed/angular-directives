@@ -1,8 +1,14 @@
 <div class="container">
   <nav>
     <ul class="pagination mt-2">
-        <li class="page-item" *ngFor="let image of images; let i=index">
+        <li class="page-item">
+            <a href="" class="page-link">Prev</a>
+        </li>
+        <li class="page-item" [ngClass]="{active : currentPage===i}" *ngFor="let image of images; let i=index">
             <a  class="page-link">{{i+1}}</a>
+        </li>
+        <li class="page-item">
+            <a href="" class="page-link">Next</a>
         </li>
     </ul>
   </nav>
