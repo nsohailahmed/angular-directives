@@ -16,7 +16,7 @@
     </ul>
   </nav>
   <div class="">
-    <h4 appClass [backgroundColor]=" 'red' "> {{images[currentPage].title}} </h4>
+    <h4 [appClass]=" 'red' "> {{images[currentPage].title}} </h4>
     <img [src]="images[currentPage].url" />
   </div>
   <div [ngSwitch]="currentPage">
