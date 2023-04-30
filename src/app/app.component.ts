@@ -56,7 +56,7 @@ export class AppComponent {
   checkWindowIndex(index:number){
     
     
-    console.log(Math.abs(this.currentPage - index) <5);
+    console.log(Math.ceil(this.currentPage - index) <5);
     
     return Math.abs(this.currentPage - index) <5;
   }
